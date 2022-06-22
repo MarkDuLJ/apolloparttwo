@@ -23,6 +23,10 @@ const resolvers = {
       //   console.log("Parent parameter is: ", parent);
       return dataSources.trackAPI.getAuthor(parent.authorId);
     },
+    modules: ({ id }, _, { dataSources }) => {
+      //   console.log("Parent parameter is: ", parent);
+      return dataSources.trackAPI.getTrackModules(id);
+    },
   },
 };
 
