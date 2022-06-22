@@ -11,6 +11,11 @@ const resolvers = {
       const res = await fetch(`${baseUrl}/tracks`);
       return res.json();
     },
+
+    //get a single track by id, for the track page
+    track: (parent, { id }, { dataSources }) => {
+      return dataSources.trackAPI.getTrack(id);
+    },
   },
 
   Track: {
